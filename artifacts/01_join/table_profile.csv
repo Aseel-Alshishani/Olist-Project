@@ -1,0 +1,10 @@
+table,rows,columns,candidate_key,duplicate_key_groups,one_row_means
+olist_customers_dataset,99441,5,customer_id,0,one order-specific customer record
+olist_geolocation_dataset,1000163,5,geolocation_zip_code_prefix,17972,one geocoding observation for a ZIP prefix
+olist_order_items_dataset,112650,7,"order_id, order_item_id",0,one item position within an order
+olist_order_payments_dataset,103886,5,"order_id, payment_sequential",0,one payment attempt/method within an order
+olist_order_reviews_dataset,99224,7,review_id,789,one submitted review
+olist_orders_dataset,99441,8,order_id,0,one order
+olist_products_dataset,32951,9,product_id,0,one product
+olist_sellers_dataset,3095,4,seller_id,0,one seller
+product_category_name_translation,71,2,product_category_name,0,one category translation
