@@ -1,0 +1,10 @@
+,cardinality,most_common,most_common_share
+order_id,67529,00010242fe8c5a6d1ba2dd792cb16214,1.4808452664781057e-05
+customer_id,67529,00012a2ce6f8dcda20d059ce98491703,1.4808452664781057e-05
+customer_unique_id,65397,3e43e6105506432c953e165fb2acf44c,0.00013327607398302952
+customer_city,3747,sao paulo,0.14689985043462808
+primary_product_category,72,bed_bath_table,0.09752846925024804
+customer_state,27,SP,0.40284914629270385
+primary_seller_state,22,SP,0.7084808008411201
+primary_payment_type,5,credit_card,0.7512031867790134
+order_status,1,delivered,1.0
