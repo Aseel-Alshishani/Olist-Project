@@ -1,0 +1,58 @@
+{
+  "selection_metric": "average_precision",
+  "best_C": 0.01,
+  "baseline_validation": {
+    "average_precision": 0.053420870767104355,
+    "roc_auc": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": [
+      [
+        13697,
+        0
+      ],
+      [
+        773,
+        0
+      ]
+    ]
+  },
+  "selected_model_validation": {
+    "average_precision": 0.1500562330035092,
+    "roc_auc": 0.7692312959627707,
+    "precision": 0.11020408163265306,
+    "recall": 0.6985769728331177,
+    "f1": 0.19037546271813854,
+    "balanced_accuracy": 0.6901295465027091,
+    "confusion_matrix": [
+      [
+        9337,
+        4360
+      ],
+      [
+        233,
+        540
+      ]
+    ]
+  },
+  "selected_model_test": {
+    "average_precision": 0.11698646317762579,
+    "roc_auc": 0.6765053741241909,
+    "precision": 0.09843617408170688,
+    "recall": 0.8484848484848485,
+    "f1": 0.17640669128829026,
+    "balanced_accuracy": 0.6490833299698181,
+    "confusion_matrix": [
+      [
+        6077,
+        7437
+      ],
+      [
+        145,
+        812
+      ]
+    ]
+  }
+}
