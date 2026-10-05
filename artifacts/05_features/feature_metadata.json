@@ -1,0 +1,39 @@
+{
+  "fit_split": "train",
+  "numeric_inputs": [
+    "item_count",
+    "unique_product_count",
+    "unique_seller_count",
+    "total_item_value",
+    "mean_item_price",
+    "total_freight_value",
+    "mean_product_weight_g",
+    "mean_product_volume_cm3",
+    "mean_product_photos_qty",
+    "payment_count",
+    "payment_type_count",
+    "max_payment_installments",
+    "total_payment_value",
+    "seller_customer_distance_km",
+    "estimated_lead_days",
+    "purchase_month",
+    "purchase_weekday",
+    "purchase_hour"
+  ],
+  "categorical_inputs": [
+    "customer_state",
+    "primary_seller_state",
+    "primary_product_category",
+    "primary_payment_type"
+  ],
+  "output_feature_count": 146,
+  "leakage_exclusions": [
+    "order_delivered_customer_date",
+    "order_delivered_carrier_date",
+    "order_approved_at",
+    "order_id",
+    "customer_id",
+    "customer_unique_id",
+    "is_late"
+  ]
+}
