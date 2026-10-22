@@ -12,7 +12,7 @@ from src.config_loader import ConfigLoader
 from src.logger_config import setup_logger
 
 # Initialize logger
-logger = setup_logger()
+logger = setup_logger(name=__name__)
 
 class OlistInferencePipeline:
     def __init__(self):

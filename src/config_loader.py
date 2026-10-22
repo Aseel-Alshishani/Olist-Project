@@ -7,7 +7,7 @@ from pathlib import Path
 import yaml
 from src.logger_config import setup_logger
 
-logger = setup_logger()
+logger = setup_logger(name=__name__)
 
 class ConfigLoader:
     def __init__(self, config_path: str = "config/config.yaml"):

@@ -6,7 +6,7 @@ Contains transformation logic and feature extraction matching Notebook 5 exactly
 import pandas as pd
 from src.logger_config import setup_logger
 
-logger = setup_logger()
+logger = setup_logger(name=__name__)
 
 NUMERIC_FEATURES = [
     "item_count", "unique_product_count", "unique_seller_count", "total_item_value",

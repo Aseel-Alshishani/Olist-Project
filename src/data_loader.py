@@ -7,7 +7,7 @@ from pathlib import Path
 import pandas as pd
 from src.logger_config import setup_logger
 
-logger = setup_logger()
+logger = setup_logger(name=__name__)
 
 class DataLoader:
     @staticmethod
