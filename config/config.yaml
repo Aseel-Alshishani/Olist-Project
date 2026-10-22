@@ -1,0 +1,16 @@
+# config/config.yaml
+paths:
+  raw_data_dir: "artifacts/03_split"
+  features_dir: "artifacts/05_features"
+  models_dir: "artifacts/06_model"
+  preprocessor_path: "artifacts/05_features/preprocessor.joblib"
+  model_path: "artifacts/06_model/trained_model.joblib"
+
+model:
+  c_value: 1.0
+  random_state: 42
+  decision_threshold: 0.5
+
+api:
+  host: "0.0.0.0"
+  port: 8000
