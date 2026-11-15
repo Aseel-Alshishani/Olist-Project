@@ -1,6 +1,6 @@
 # config/config.yaml
 paths:
-  raw_data_dir: "artifacts/03_split"
+  split_data_dir: "artifacts/03_split"
   features_dir: "artifacts/05_features"
   models_dir: "artifacts/06_model"
   preprocessor_path: "artifacts/05_features/preprocessor.joblib"

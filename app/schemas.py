@@ -1,4 +1,8 @@
+
+from datetime import datetime
+
 from pydantic import BaseModel, Field
+
 
 class OrderInput(BaseModel):
     item_count: int = Field(..., description="Number of items in the order")
@@ -15,14 +19,15 @@ class OrderInput(BaseModel):
     max_payment_installments: int
     total_payment_value: float
     seller_customer_distance_km: float
-    estimated_lead_days: float
-    purchase_month: int
-    purchase_weekday: int
-    purchase_hour: int
+
+    order_purchase_timestamp: datetime
+    order_estimated_delivery_date: datetime
+
     customer_state: str
     primary_seller_state: str
     primary_product_category: str
     primary_payment_type: str
+
 
 class PredictionOutput(BaseModel):
     prediction: int = Field(..., description="0 for On time, 1 for Late")
