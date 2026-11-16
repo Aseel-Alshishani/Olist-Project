@@ -88,3 +88,67 @@ class OlistInferencePipeline:
                 "status": "error",
                 "detail": f"Invalid input data: {str(e)}"
             }
+            
+    def run_batch(self, raw_data: pd.DataFrame) -> dict:
+        start_time = time.time()
+
+        logger.info(
+            "Received batch prediction request. Batch size: %s",
+            len(raw_data),
+        )
+
+        try:
+            if raw_data.empty:
+                raise ValueError("Batch input cannot be empty.")
+
+            # Feature engineering for all orders.
+            processed_features = build_features(raw_data)
+
+            # Transform all records.
+            transformed_data = self.preprocessor.transform(
+                processed_features
+            )
+
+            # Predict all records.
+            predictions = self.model.predict(transformed_data)
+            probabilities = self.model.predict_proba(transformed_data)[:, 1]
+
+            results = [
+                {
+                    "prediction": int(prediction),
+                    "probability": float(probability),
+                    "model_version": self.model_version,
+                }
+                for prediction, probability in zip(
+                    predictions, probabilities
+                )
+            ]
+
+            latency_ms = (time.time() - start_time) * 1000
+
+            logger.info(
+                "Batch prediction successful | "
+                "Total orders: %s | Latency: %.2f ms",
+                len(results),
+                latency_ms,
+            )
+
+            return {
+                "predictions": results,
+                "total_orders": len(results),
+                "latency_ms": round(latency_ms, 2),
+                "status": "success",
+            }
+
+        except Exception as e:
+            latency_ms = (time.time() - start_time) * 1000
+
+            logger.exception("Batch prediction failed.")
+
+            return {
+                "predictions": [],
+                "total_orders": 0,
+                "latency_ms": round(latency_ms, 2),
+                "status": "error",
+                "detail": f"Batch prediction failed: {str(e)}",
+            }
